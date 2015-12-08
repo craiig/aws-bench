@@ -1,0 +1,17 @@
+aws s3 ls s3://big-data-benchmark/pavlo/sequence-snappy/5nodes/crawl/000000_0
+2013-05-27 21:27:05   55396512 000000_0
+time -p ./s3-only.sh
+download: s3://big-data-benchmark/pavlo/sequence-snappy/5nodes/crawl/000000_0 to ./test_file
+real 11.48
+user 1.30
+sys 0.71
+time -p ./s3-md5.sh
+c34061d7108c4f64a1a0b011b5a8acdf  -
+real 25.40
+user 1.63
+sys 0.62
+time -p md5sum test_file
+c34061d7108c4f64a1a0b011b5a8acdf  test_file
+real 0.21
+user 0.18
+sys 0.02
